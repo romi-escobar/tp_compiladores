@@ -1,6 +1,6 @@
 import gradio as gr
 
-input_string = "1110 11 11000"
+input_string = input("Por favor, ingrese la entrada: ")
 current_position = 0
 lista_decimal = []
 decimal = 0
@@ -102,7 +102,7 @@ def error_final():
 
 resultado = lista_binario()
 print("El resultado es: ", resultado)
-print("cantidad de caracteres: ", current_position)
+
 
 
 def greet(input_string):

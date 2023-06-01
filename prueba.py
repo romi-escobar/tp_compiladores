@@ -1,4 +1,9 @@
+#Escribir un Traductor Dirigido por la Sintaxis predictivo que recibe una lista 
+# de números binarios y retorna la lista, pero con sus números decimales equivalentes.
+# Ejemplo: 1110 11 11000 retorna 14 3 24
+
 import gradio as gr
+
 
 input_string = input("Por favor, ingrese la entrada: ")
 current_position = 0
@@ -9,14 +14,12 @@ x = 0
 y = 0
 resultado = 0
 
-
 # Definicion de la funcion del no terminal "lista_binario"
 def lista_binario():
     decimal = binario()
     lista_decimal.append(decimal)
     R_lista()
     return lista_decimal
-
 
 # Definicion de la funcion del no terminal "R_lista"
 def R_lista():
@@ -28,7 +31,6 @@ def R_lista():
             lista_binario()
     else:
         return None
-
 
 # Definicion de la funcion del no terminal "binario"
 def binario():
@@ -50,7 +52,6 @@ def binario():
     else:
         error_final()
 
-
 # Definicion de la funcion del no terminal "binario"
 def R():
     global current_position, p
@@ -61,7 +62,6 @@ def R():
             return x
     else:
         return 0
-
 
 # Definicion de la funcion del no terminal "espacio"
 def espacio():
@@ -75,7 +75,6 @@ def espacio():
     else:
         return False
 
-
 # FUNCION MATCH: valida y avanza la entrada
 def match(expected):
     global current_position
@@ -87,22 +86,18 @@ def match(expected):
     else:
         error_final()
 
-
 # Manejo de error de caracter invalido
 def error_invalido():
     print("caracter invalido")
 #    raise ValueError("Error de sintaxis: No se esperaba el caracter '{}'".format(input_string[current_position]))
-
 
 # Manejo de error de fin de cadena
 def error_final():
     print("fin de cadena")
 #    raise ValueError("Error: Se alcanzo el final de la cadena")
 
-
 resultado = lista_binario()
 print("El resultado es: ", resultado)
-
 
 
 def greet(input_string):

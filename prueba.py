@@ -61,9 +61,7 @@ def R():
             return x
     else:
         return 0
-#
-#en esta funcion en el 
-#
+
 
 # Definicion de la funcion del no terminal "espacio"
 def espacio():
